@@ -1,13 +1,7 @@
-const menuIcon = document.querySelector('#menu-icon');
-const nav = document.querySelector('.bx');
+const hamburguer = document.querySelector(".hamburguer-menu");
+const navMenu = document.querySelector(".navlist");
 
-menuIcon.addEventListener('click', function() {
-  nav.classList.toggle('show');
-});
-
-
-document.addEventListener('click', (event) => {
-    if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-      nav.classList.remove('active');
-    }
-  });
+hamburguer.addEventListener("click", () => {
+  hamburguer.classList.toggle('active');
+  navMenu.classList.toggle('active');
+})

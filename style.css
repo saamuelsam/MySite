@@ -71,14 +71,30 @@ span {
     color: var(--main-color);
 }
 
-#menu-icon {
+.hamburguer-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* #menu-icon {
     font-size: 35px;
     color: var(--text-color);
     z-index: 1000;
     cursor: pointer;
     margin-left: 25px;
     display: none;
-}
+} */
 
 
 section {
@@ -505,16 +521,50 @@ section {
     }
 
     .navlist {
-       display: flex;
+        display: flex;
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        border-radius: 20px;
+        background: #ffffff31;
+        text-align: center;
+        flex-direction: column;
+        width: 20%; 
+        transition: 0.3s;
+      /*  display: flex;
        flex-wrap: wrap;
        flex-direction: column;
        justify-content: flex-end;
-       align-items: center;
+       align-items: center; */
     }
 
     .navlist a{
+        margin: 16px 0;
         display: block;
-        padding: 2px;
+    }
+
+    .hamburguer-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        margin-top: 30px;
+        margin-left: 80%;
+    }
+
+    .hamburguer-menu:active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer-menu:active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburguer-menu:active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navlist.active {
+        right: 0;
     }
 
     .about-img {
@@ -533,43 +583,31 @@ section {
 
 
 @media (max-width: 480px) {
-    #menu-icon {
+    /* #menu-icon {
         display: block;
-    }
-    .navlist{
-        position: absolute;
-        top: -1000px;
-        right: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-color);
-        text-align: left;
-        transition: all .45s ease;
-    }
-.navlist a {
-    display: block;
-    margin: 17px;
-    font-size: 2px;
+    } */
+ .navlist a {
     transition: all .45s ease;
     color: var(--text-color);
-}
-
-.navlist a:hover {
-    color: var(--main-color);
-}
-navlist a.active{
-    color: var(--text-color);
-}
-.navlist.open {
-    top: 100%;
-}
-
+} 
+ 
 .logo {
-    display: block;
+    display: none;
 }
 .services {
     background: var(--second-bg-color);
     padding: 110px 50px;
+ }
+
+ .home-text h1{
+    font-size: 2em;
+ }
+
+ .home-text h3{
+    font-size: 2em;
+ }
+
+ .home-text p {
+    font-size: var(--p-font);
  }
 }
