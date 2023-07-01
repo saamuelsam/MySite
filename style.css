@@ -611,3 +611,14 @@ section {
     font-size: var(--p-font);
  }
 }
+/* animação scroll */
+.js-scroll {
+    opacity: 0;
+    transform: translate(-30, 0, 0);
+    transition: .3s;
+}
+
+.js-scroll.ativo{
+    opacity: 1;
+    transform: translate(0, 0, 0);
+}
